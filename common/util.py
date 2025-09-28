@@ -21,6 +21,20 @@ def preprocess(text):
 text = 'You say goodbye and I say hello.'
 corpus, word_to_id, id_to_word = preprocess(text)
 
-print("Corpus:", corpus)
-print("Word to ID:", word_to_id)
-print("ID to Word:", id_to_word)
+# print("Corpus:", corpus)
+# print("Word to ID:", word_to_id)
+# print("ID to Word:", id_to_word)
+
+# 共起行列 （手打ち）
+C = np.array([
+    [0,1,0,0,0,0,0],
+    [1,0,1,0,1,1,0],
+    [0,1,0,1,0,0,0],
+    [0,0,1,0,1,0,0],
+    [0,1,0,1,0,0,0],
+    [0,1,0,0,0,0,1],
+    [0,0,0,0,0,1,0],
+], dtype=np.int32)
+
+print(C[0]) # 単語IDが0のベクトル
+print(C[4]) # 単語IDが4のベクトル
